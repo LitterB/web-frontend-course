@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM DEMO</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+
+        input{
+            width: 200px;
+            height: 2rem;
+        }
+        .container{
+            margin: 100px;
+        }
+        #add-btn,#sub-btn{
+            width: 100px;
+            height: 2rem;
+            border: none;
+            background-color:chartreuse;
+            font-size: 1rem;
+        }
+        #sub-btn{
+            background-color: red;
+        }
+        .append_ul{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="name">
+        <button id="add-btn">增加</button>
+        <button id="sub-btn">删除</button>
+        <ul class="append_ul">
+
+        </ul>
+    </div>
+    <script>
+        let ulContainer = document.querySelector(".append_ul");
+        document.querySelector("#add-btn").addEventListener("click", function(){
+            let appendLi = document.createElement("li");
+            let appendInput = document.createElement("input");
+            appendInput.setAttribute("type", "text");
+            appendInput.setAttribute("name", "name");
+            appendLi.appendChild(appendInput);
+            ulContainer.appendChild(appendLi)
+        });
+        document.querySelector("#sub-btn").addEventListener("click", function(){
+            ulContainer.removeChild(ulContainer.lastChild)
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>amr 播放</title>
+</head>
+<body>
+    <button id="start">点击播放</button>
+    <audio src="http://oss-xiake-scrm.oss-cn-shenzhen.aliyuncs.com/merchant/7179658470/wechat_message/b792025c974a4cd59d09abff46782e68.mp3?OSSAccessKeyId=STS.NJ6uQPWv6dyBCxcmLV77cAv37&Expires=1561211130&Signature=a4mf%2F%2FZ11tGw79aQTzR%2BARDiXsc%3D&security-token=CAISowR1q6Ft5B2yfSjIr4mDPuvkuqkX07upQV7SiUwDO7hPrrOY1Tz2IHhNeHVqCe8dtPs3mW1X6%2FwclqMsEsAUGxGUMZQotli5OJd%2BJtivgde8yJBZogzPewHKecGSvqL7Z%2BH%2BU6mDGJOEYEzFkSle2KbzcS7YMXWuLZyOj%2BwRDLEQRRLqVSdaI91UKwB%2ByqodLmCDGvuxFRToj2HMdlQK3DBxkmRi86%2By79SB4x7F9j3Ax%2FQSup76L%2BqWDZFlN4wtVMyujq4kNPjGyzUV%2BxlD96ozl6de%2FHDCs8uWA1BX%2F1LZarWFrIA%2FcFAhIepYVadPt6r7juYq%2BL6RxYPs0FNdPOhWXmHET5qlh8zcFfmgKtc%2Bc%2FG5SaWksL2mMp3yrHl6AxYyPx9LfNwMM2J5DQdWJBjRNq6g%2FiK8AGKkULPX6Lwq9pB3wl70n7%2BNPEPdbLiF9iwaN5QgFRNKUSQbxmv8aKQLXhVReld8fdavQJ50cQpVpNGc33%2FbXTYyyWpM7b%2BsJaHRobtaeYT2XZ8DyoEHYe4Q0QkRU072Tb2Ki0QZDg5iWq0E6LPgN56vmvPnveCee%2BXGA%2FYb%2FQoDLmGP8nrRFisXb0%2BS4cUuc1OE%2BsPXi%2B7ui8o7S1B3vooAU1zZLow19wxcjvHsv0jJwojKSWu3%2B2c0wN7c8rRU5FFsFvXe2LfL4mKE7CPLO%2FZhxZqIBTcxW3ascGZ8hfmeg3MBt%2FCbWO9u3dF1GoABGoXTWy2iw5CgIO20P9%2BeTkLM7UI0aegc7LvKjzVnDdvnypaq6MS88nbrqOIOGK2C3qFYdlby%2BvV661Hbk7zTsxa0LHaEi3DUj7Tjh%2BM%2Bb9XoSEjqIoCiTjys4B95vMRoVQql6TVFoIzXdfY%2FDxE4dg4v6cGBgf3g%2FiqKsG1tF%2FI%3D"></audio>
+    <script type="text/javascript" src="./js/BenzAMRRecorder.js"></script>
+    <script>
+        const playBtn = document.getElementById("start");
+        playBtn.addEventListener("click", function(){
+            var amr = new BenzAMRRecorder();
+            amr.initWithUrl('./source/mario.amr').then(function(){
+                amr.play();
+            });
+            amr.onEnded(function(){
+                console.log("播放完毕");
+            })
+        });
+    </script>
+</body>
+</html>

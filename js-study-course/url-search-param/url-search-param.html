@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>http://www.baidu.com?key=关键字&pageSize=10&currentPage=1</p>
+    <script>
+        let url = "http://www.baidu.com/?key=关键字&pageSize=10&currentPage=1";
+        let searchParams = new URLSearchParams(url);
+        for (let p of searchParams) {
+            console.log(p);
+            console.log(typeof p);
+        }
+        console.log(searchParams.get("pageSize"))
+    </script>
+</body>
+</html>
